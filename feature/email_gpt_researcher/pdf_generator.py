@@ -5,7 +5,7 @@ import logging
 import markdown
 from bs4 import BeautifulSoup
 import pdfkit
-from aitool_gpt_researcher.image_handler import cleanup_images
+from email_gpt_researcher.image_handler import cleanup_images
 
 def create_pdf_report(report_output):
     """
