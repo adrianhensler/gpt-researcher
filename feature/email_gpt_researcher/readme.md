@@ -4,7 +4,7 @@ An email-based interface for GPT Researcher that automatically processes researc
 
 ## Overview
 
-Email GPT Researcher is an optional extension for the GPT Researcher project that enables users to submit research queries via email and receive comprehensive PDF reports in response. The system monitors a designated email inbox for messages with "Detailed_Report" in the subject line, processes the research requests using GPT Researcher, and sends back professionally formatted PDF reports.
+Email GPT Researcher is an optional extension for the GPT Researcher project that enables users to submit research queries via email and receive comprehensive PDF reports in response. The system monitors a designated email inbox for messages with "detailed_report" (not case sensitive) in the subject line, processes the research requests using GPT Researcher, and sends back professionally formatted PDF reports.
 
 ## Features
 
@@ -61,8 +61,8 @@ python -m feature.email_gpt_researcher.main
 ```
 
 2. Send an email with:
-   - Subject containing "Detailed_Report"
-   - Body containing your research query
+   - Subject containing "detailed_report" (not case-sensitive)
+   - Body containing your research query  ## TODO better stripping of forced footers etc in email (legalese, OOO etc? Optional API call?)
 
 3. The system will:
    - Process your request using GPT Researcher
@@ -91,7 +91,6 @@ Logs are stored in the feature directory by default.
 - Currently only processes plain text email bodies
 - No support for attachments in incoming emails
 - Limited to one research query per email
-- Subject must contain exact phrase "Detailed_Report"
 
 ## Contributing
 
