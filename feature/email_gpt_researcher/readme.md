@@ -1,3 +1,5 @@
+## Needs review; I've had to change things to make it "presentable" which involved some changes; any breakage here is likely due to path issues.
+
 # Email GPT Researcher
 
 An email-based interface for GPT Researcher that automatically processes research requests and returns detailed PDF reports.
@@ -326,3 +328,30 @@ from tenacity import retry, stop_after_attempt, wait_exponential
 def send_email_with_retry(to_email, subject, file_path, original_msg):
     # Existing send_email_with_attachment code here
 ```
+
+## Configuration example
+
+You'll need the .env variables as detailed above. I trigger it via crontab:
+
+Crontab entry such as:
+
+```
+*/15 * * * * /home/automate/automate/cron_run_gptr.sh >> /home/automate/automate/logs//cron_tts_gptr_email.log 2>&1
+```
+
+The above calls cron_run_gptr.sh:
+
+cron_run_gptr.sh:
+
+```
+#!/bin/bash
+# Activate the virtual environment
+source /home/automate/code/gptresearcher/gpt-researcher/env/bin/activate
+# Run the Python script
+# python /home/automate/code/gptresearcher/gpt-researcher/feature/email_gpt_researcher.py
+cd /home/automate/code/gptresearcher/gpt-researcher/feature
+python -m email_gpt_researcher.main
+# Now run other python script to deactivate
+deactivate
+```
+
