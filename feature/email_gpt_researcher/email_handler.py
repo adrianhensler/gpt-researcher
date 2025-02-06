@@ -8,7 +8,7 @@ import mimetypes
 
 from email.message import EmailMessage
 
-from aitool_gpt_researcher import config, utils, report_generator
+from feature.email_gpt_researcher import config, utils, report_generator
 
 
 def extract_email_body(msg):
