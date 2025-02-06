@@ -267,7 +267,7 @@ Contributions are welcome! Please:
 
 ## License
 
-[Specify your license here]
+TBD
 
 ## Acknowledgments
 
