@@ -107,7 +107,7 @@ def check_email():
             logging.error(f"Error selecting inbox: {e}")
             return
 
-        result, data = mail.search(None, '(UNSEEN SUBJECT "Detailed_Report")')
+        result, data = mail.search(None, '(UNSEEN HEADER Subject "Detailed_Report")')
         if result != 'OK':
             logging.error("Failed to search for emails.")
             return
