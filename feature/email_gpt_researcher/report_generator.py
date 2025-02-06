@@ -1,7 +1,7 @@
 import asyncio
 import logging
 from backend.report_type.detailed_report.detailed_report import DetailedReport
-from aitool_gpt_researcher import pdf_generator
+from feature.email_gpt_researcher import pdf_generator
 
 async def generate_report(query):
     """
