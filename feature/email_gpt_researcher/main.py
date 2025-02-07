@@ -1,7 +1,7 @@
 import argparse
 import logging
 import os
-from email_gpt_researcher import config, email_handler
+from feature.email_gpt_researcher import config, email_handler
 
 # Configure logging (here we use the log file path from config)
 logging.basicConfig(
