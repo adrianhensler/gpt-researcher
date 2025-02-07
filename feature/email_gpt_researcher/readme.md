@@ -4,6 +4,8 @@
 
 An email-based interface for GPT Researcher that automatically processes research requests and returns detailed PDF reports.
 
+Please note this document was generated mostly by AI; as was the code. Any corrections welcome.
+
 ## Overview
 
 Email GPT Researcher is an optional extension for the GPT Researcher project that enables users to submit research queries via email and receive comprehensive PDF reports in response. The system monitors a designated email inbox for messages with "detailed_report" (not case sensitive) in the subject line, processes the research requests using GPT Researcher, and sends back professionally formatted PDF reports.
