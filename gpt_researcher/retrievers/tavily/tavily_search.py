@@ -38,8 +38,9 @@ class TavilySearch():
             try:
                 api_key = os.environ["TAVILY_API_KEY"]
             except KeyError:
-                raise Exception(
-                    "Tavily API key not found. Please set the TAVILY_API_KEY environment variable.")
+                print(
+                    "Tavily API key not found, set to blank. If you need a retriver, please set the TAVILY_API_KEY environment variable.")
+                return ""
         return api_key
 
     def _search(self,
@@ -47,7 +48,7 @@ class TavilySearch():
                 search_depth: Literal["basic", "advanced"] = "basic",
                 topic: str = "general",
                 days: int = 2,
-                max_results: int = 5,
+                max_results: int = 10,
                 include_domains: Sequence[str] = None,
                 exclude_domains: Sequence[str] = None,
                 include_answer: bool = False,
@@ -83,7 +84,7 @@ class TavilySearch():
             # Raises a HTTPError if the HTTP request returned an unsuccessful status code
             response.raise_for_status()
 
-    def search(self, max_results=7):
+    def search(self, max_results=10):
         """
         Searches the query
         Returns:
